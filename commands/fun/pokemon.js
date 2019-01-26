@@ -23,8 +23,9 @@ module.exports = class PokemonCommand extends Command {
     const botlog=this.client.channels.find('name','bot-logs');
     let score = this.client.getScore.get(message.author.id, message.guild.id);
     
-    const rand = Math.floor(Math.random() * 802);
-    const poke = rand > 0 ? rand : Math.floor(Math.random() * 802);
+    const num_poke = pokemon.length;
+    const rand = Math.floor(Math.random() * num_poke);
+    const poke = rand > 0 ? rand : Math.floor(Math.random() * num_poke);
     const pokem = pokemon[poke];
 
     const embed =  new Discord.RichEmbed()
